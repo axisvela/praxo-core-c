@@ -53,11 +53,13 @@ Runnable examples live under [`language/c/examples`](language/c/examples).
 | --- | --- |
 | [checkpoint](language/c/examples/checkpoint) | This example uses the C Core checkpoint allowlist to encode and decode only registered payload types. |
 | [event-sink](language/c/examples/event-sink) | This example uses the C Core sink composition to fan out lifecycle and tool events and filter the tool-only stream. |
+| [hitl](language/c/examples/hitl) | This example demonstrates a write tool that requires human approval: |
 | [identity-policy](language/c/examples/identity-policy) | This example binds a trusted principal to a C Core policy callback and rejects missing, inactive, role-mismatched, and tenant-mismatched actions. |
 | [mcp](language/c/examples/mcp) | This example uses a caller-owned in-process transport with the C MCP client. It covers initialize, `tools/list`, and `tools/call` without a server process. |
 | [provider-fallback](language/c/examples/provider-fallback) | This example calls a fallback only after the primary fails and preserves the primary error when both fail. |
 | [retry](language/c/examples/retry) | This example retries a transient failure with a bounded attempt count and preserves the final error when attempts are exhausted. |
 | [service](language/c/examples/service) | This example defines a transport-neutral request handler boundary with health, principal, and run cases. Wire it into any C HTTP server. |
+| [session-checkpoint](language/c/examples/session-checkpoint) | This example saves and restores a conversation history across two agent turns. It uses the Core allowlist for payload encoding and a teaching in-memory payload. |
 | [streaming](language/c/examples/streaming) | This example forwards model deltas through the C Core `on_delta` callback and checks that the deltas reconstruct the final output. |
 | [structured-output](language/c/examples/structured-output) | This example validates a final JSON answer against a schema and rejects invalid output. |
 
