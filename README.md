@@ -1,6 +1,6 @@
 # PRAXO-CORE for C
 
-C11 implementation of the PRAXO-CORE Core contract with source version `0.9.0`. The normative contract is [`spec/`](spec/README.md); Go remains the reference implementation.
+C11 implementation of the PRAXO-CORE Core contract with source version `0.10.0`. The normative contract is [`spec/`](spec/README.md); Go remains the reference implementation.
 
 ## At a glance
 
@@ -9,9 +9,9 @@ C11 implementation of the PRAXO-CORE Core contract with source version `0.9.0`. 
 | Package | `praxo-core-c` |
 | Registry | Source / CMake |
 | Build | CMake source build (see README) |
-| Source version | `0.9.0` |
+| Source version | `0.10.0` |
 | Published version | not published |
-| Source tag | `c/v0.9.0` |
+| Source tag | `c/v0.10.0` |
 | Tier | Core |
 | Contract | `SPEC_VERSION` `0.2.0` |
 | Documentation | https://axisvela.github.io/praxo-core/languages/c/ |
@@ -52,9 +52,11 @@ Runnable examples live under [`language/c/examples`](language/c/examples).
 | Example | What it shows |
 | --- | --- |
 | [checkpoint](language/c/examples/checkpoint) | This example uses the C Core checkpoint allowlist to encode and decode only registered payload types. |
+| [consumer](language/c/examples/consumer) | This example runs a deterministic model against the C Core, registers one `record(target)` tool, applies an explicit tool scope plus policy, and checks that an allowed call prod... |
 | [event-sink](language/c/examples/event-sink) | This example uses the C Core sink composition to fan out lifecycle and tool events and filter the tool-only stream. |
 | [hitl](language/c/examples/hitl) | This example demonstrates a write tool that requires human approval: |
 | [identity-policy](language/c/examples/identity-policy) | This example binds a trusted principal to a C Core policy callback and rejects missing, inactive, role-mismatched, and tenant-mismatched actions. |
+| [live-model](language/c/examples/live-model) | This example connects the C Core to an OpenAI-compatible endpoint through the existing `px_openai_generate` adapter and registers one low-risk `get_time(zone)` tool. The model m... |
 | [mcp](language/c/examples/mcp) | This example uses a caller-owned in-process transport with the C MCP client. It covers initialize, `tools/list`, and `tools/call` without a server process. |
 | [provider-fallback](language/c/examples/provider-fallback) | This example calls a fallback only after the primary fails and preserves the primary error when both fail. |
 | [retry](language/c/examples/retry) | This example retries a transient failure with a bounded attempt count and preserves the final error when attempts are exhausted. |
