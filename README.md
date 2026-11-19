@@ -1,6 +1,6 @@
 # PRAXO-CORE for C
 
-C11 implementation of the PRAXO-CORE Core contract with source version `0.11.0`. The normative contract is [`spec/`](spec/README.md); Go remains the reference implementation.
+C11 implementation of the PRAXO-CORE Core contract with source version `0.12.0`. The normative contract is [`spec/`](spec/README.md); Go remains the reference implementation.
 
 ## At a glance
 
@@ -9,9 +9,9 @@ C11 implementation of the PRAXO-CORE Core contract with source version `0.11.0`.
 | Package | `praxo-core-c` |
 | Registry | Source / CMake |
 | Build | CMake source build (see README) |
-| Source version | `0.11.0` |
+| Source version | `0.12.0` |
 | Published version | not published |
-| Source tag | `c/v0.11.0` |
+| Source tag | `c/v0.12.0` |
 | Tier | Core |
 | Contract | `SPEC_VERSION` `0.2.0` |
 | Documentation | https://axisvela.github.io/praxo-core/languages/c/ |
