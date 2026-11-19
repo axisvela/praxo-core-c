@@ -9,9 +9,9 @@ C11 implementation of the PRAXO-CORE Core contract with source version `0.12.0`.
 | Package | `praxo-core-c` |
 | Registry | Source / CMake |
 | Build | CMake source build (see README) |
-| Source version | `0.12.0` |
+| Source version | `0.13.0` |
 | Published version | not published |
-| Source tag | `c/v0.12.0` |
+| Source tag | `c/v0.13.0` |
 | Tier | Core |
 | Contract | `SPEC_VERSION` `0.2.0` |
 | Documentation | https://axisvela.github.io/praxo-core/languages/c/ |
@@ -22,7 +22,6 @@ C11 implementation of the PRAXO-CORE Core contract with source version `0.12.0`.
 - OpenAI-compatible model: native (transport seam)
 - Anthropic model: native (transport seam)
 - Gemini model: native (transport seam)
-- Process plugin host: native (Windows/POSIX)
 - MCP client: native (transport seam)
 - Harmovela sink: native (transport seam)
 - OpenTelemetry sink: native (transport seam)
@@ -37,10 +36,9 @@ This implementation is source-only. Follow the build instructions in [`language/
 
 | Capability | Status | Detail |
 | --- | --- | --- |
-| OpenAI-compatible model | native (transport seam) | `PxOpenAICompatible`; caller supplies HTTP transport |
-| Anthropic model | native (transport seam) | `PxAnthropic`; caller supplies HTTP transport; Anthropic SSE streaming |
-| Gemini model | native (transport seam) | `PxGemini`; caller supplies HTTP transport; Gemini SSE streaming |
-| Process plugin host | native (Windows/POSIX) | `PxPluginProcess`; JSON-Lines stdio, token auth, health, timeout |
+| OpenAI-compatible model | native (transport seam) | `PxOpenAICompatible`; caller supplies HTTP transport; `px_openai_generate_stream` reassembles SSE content, tool calls, usage, and finish reason |
+| Anthropic model | native (transport seam) | `PxAnthropic`; caller supplies HTTP transport; `px_anthropic_generate_stream` reassembles Anthropic SSE |
+| Gemini model | native (transport seam) | `PxGemini`; caller supplies HTTP transport; `px_gemini_generate_stream` reassembles Gemini SSE |
 | MCP client | native (transport seam) | `PxMcpClient`; caller supplies `PxMcpTransport` |
 | Harmovela sink | native (transport seam) | `praxo_harmovela`; caller supplies HTTP transport |
 | OpenTelemetry sink | native (transport seam) | `PxOtelSink`; caller supplies `PxOtelTransport` |
