@@ -12,6 +12,8 @@ C11 implementation of the PRAXO-CORE Core contract with source version `0.12.0`.
 | Source version | `0.13.0` |
 | Published version | not published |
 | Source tag | `c/v0.13.0` |
+| Tutorial tag | `c/tutorial/v0.1.0` |
+| Examples tag | `c/examples/v0.1.0` |
 | Tier | Core |
 | Contract | `SPEC_VERSION` `0.2.0` |
 | Documentation | https://axisvela.github.io/praxo-core/languages/c/ |
@@ -64,6 +66,21 @@ Runnable examples live under [`language/c/examples`](language/c/examples).
 | [session-checkpoint](language/c/examples/session-checkpoint) | This example saves and restores a conversation history across two agent turns. It uses the Core allowlist for payload encoding and a teaching in-memory payload. |
 | [streaming](language/c/examples/streaming) | This example forwards model deltas through the C Core `on_delta` callback and checks that the deltas reconstruct the final output. |
 | [structured-output](language/c/examples/structured-output) | This example validates a final JSON answer against a schema and rejects invalid output. |
+
+## Scenario Tutorials
+
+Scenario-oriented tutorials live under `language/c/Tutorial`.
+
+| Path | What it shows |
+| --- | --- |
+| [Tutorial](language/c/Tutorial) | Bounded C examples built on the native Core. Each tutorial is a small, runnable slice with explicit non-goals and an application-owned boundary; none is a complete industry prod... |
+| [aquaculture-water](language/c/Tutorial/aquaculture-water) | Computes fixed oxygen/temperature indicators and drafts a bounded review action. No aerator or feeder command. |
+| [device-diagnostics](language/c/Tutorial/device-diagnostics) | A scoped device tutorial over the native MIT C Core. It reads one fixed `device-100` diagnostic snapshot through an application-owned `PxDeviceAdapter` function pointer and draf... |
+| [hvac-settings](language/c/Tutorial/hvac-settings) | Reads fixed building conditions and drafts review-only HVAC/lighting settings. No BMS command or verified energy savings. |
+| [lab-loop](language/c/Tutorial/lab-loop) | Simulates one fixed parameter/result cycle and drafts review-only next parameters. No actuator, chemical handling or autonomous experiment. |
+| [livestock-monitor](language/c/Tutorial/livestock-monitor) | Summarizes fixed animal observations and drafts a review-only veterinary request. No diagnosis, isolation or feeding control. |
+| [npc-narrative](language/c/Tutorial/npc-narrative) | Reads fixed character state and drafts one scoped host action with an observed result. No arbitrary host commands. |
+| [world-economy](language/c/Tutorial/world-economy) | Simulates one fixed economy tick and drafts a review-only balance action. No long-term equilibrium or scale guarantee. |
 
 ## Verify
 
