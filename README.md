@@ -12,8 +12,6 @@ C11 implementation of the PRAXO-CORE Core contract with source version `0.12.0`.
 | Source version | `0.13.0` |
 | Published version | not published |
 | Source tag | `c/v0.13.0` |
-| Tutorial tag | `c/tutorial/v0.1.0` |
-| Examples tag | `c/examples/v0.1.0` |
 | Tier | Core |
 | Contract | `SPEC_VERSION` `0.2.0` |
 | Documentation | https://axisvela.github.io/praxo-core/languages/c/ |
