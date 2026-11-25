@@ -9,9 +9,9 @@ C11 implementation of the PRAXO-CORE Core contract with source version `0.12.0`.
 | Package | `praxo-core-c` |
 | Registry | Source / CMake |
 | Build | CMake source build (see README) |
-| Source version | `0.13.0` |
+| Source version | `0.14.0` |
 | Published version | not published |
-| Source tag | `c/v0.13.0` |
+| Source tag | `c/v0.14.0` |
 | Tier | Core |
 | Contract | `SPEC_VERSION` `0.2.0` |
 | Documentation | https://axisvela.github.io/praxo-core/languages/c/ |
