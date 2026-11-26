@@ -80,6 +80,8 @@ Scenario-oriented tutorials live under `language/c/Tutorial`. Planning context: 
 | [npc-narrative](language/c/Tutorial/npc-narrative) | Reads fixed character state and drafts one scoped host action with an observed result. No arbitrary host commands. |
 | [world-economy](language/c/Tutorial/world-economy) | Simulates one fixed economy tick and drafts a review-only balance action. No long-term equilibrium or scale guarantee. |
 
+## Reference Applications
+
 No accepted end-to-end reference application is recorded for this language yet. Candidate goals are tracked in the [Reference Application Portfolio](https://axisvela.github.io/praxo-core/project/roadmap/#reference-application-portfolio).
 
 ## Verify
