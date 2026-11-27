@@ -7,11 +7,11 @@ C11 implementation of the PRAXO-CORE Core contract with source version `0.12.0`.
 | Field | Value |
 | --- | --- |
 | Package | `praxo-core-c` |
-| Registry | Source / CMake |
-| Build | CMake source build (see README) |
+| Registry | [xmake](https://packages.xmake.io/packages/praxo-core) |
+| Install | `xrepo install praxo-core` |
 | Source version | `0.14.0` |
-| Published version | not published |
-| Publication status | source-only |
+| Published version | `0.13.0` |
+| Publication status | published on xmake 0.13.0 (source 0.14.0); vcpkg and Conan submissions open |
 | Canonical source tag | [`c/v0.14.0`](https://github.com/axisvela/praxo-core/tree/c/v0.14.0) |
 | Tier | Core |
 | Contract | `SPEC_VERSION` `0.2.0` |
@@ -31,7 +31,13 @@ C11 implementation of the PRAXO-CORE Core contract with source version `0.12.0`.
 
 ## Quick start
 
-No published package is available. Follow the source build instructions in [`language/c/README.md`](language/c/README.md).
+Install the published package:
+
+```text
+xrepo install praxo-core
+```
+
+See the [full C README](language/c/README.md) for complete installation, build, and verification commands.
 
 ## What's included
 
