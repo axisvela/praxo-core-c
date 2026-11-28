@@ -1,6 +1,6 @@
 # PRAXO-CORE for C
 
-C11 implementation of the PRAXO-CORE Core contract with source version `0.12.0`. The normative contract is [`spec/`](https://github.com/axisvela/praxo-core/blob/main/spec/README.md); Go remains the reference implementation.
+PRAXO-CORE (also written praxocore) is an embeddable, MIT-licensed agent framework. C11 implementation of the PRAXO-CORE Core contract with source version `0.12.0`. The normative contract is [`spec/`](https://github.com/axisvela/praxo-core/blob/main/spec/README.md); Go remains the reference implementation.
 
 ## At a glance
 
@@ -59,11 +59,11 @@ Runnable examples live under [`language/c/examples`](language/c/examples).
 | Example | What it shows |
 | --- | --- |
 | [checkpoint](language/c/examples/checkpoint) | This example uses the C Core checkpoint allowlist to encode and decode only registered payload types. |
-| [consumer](language/c/examples/consumer) | This example runs a deterministic model against the C Core, registers one `record(target)` tool, applies an explicit tool scope plus policy, and checks that an allowed call prod... |
+| [consumer](language/c/examples/consumer) | This example runs a deterministic model against the C Core, registers one `record(target)` tool, applies an explicit tool scope plus policy, and checks that an allowed call produces one effect while a denied call produces none. |
 | [event-sink](language/c/examples/event-sink) | This example uses the C Core sink composition to fan out lifecycle and tool events and filter the tool-only stream. |
 | [hitl](language/c/examples/hitl) | This example demonstrates a write tool that requires human approval: |
 | [identity-policy](language/c/examples/identity-policy) | This example binds a trusted principal to a C Core policy callback and rejects missing, inactive, role-mismatched, and tenant-mismatched actions. |
-| [live-model](language/c/examples/live-model) | This example connects the C Core to an OpenAI-compatible endpoint through the existing `px_openai_generate` adapter and registers one low-risk `get_time(zone)` tool. The model m... |
+| [live-model](language/c/examples/live-model) | This example connects the C Core to an OpenAI-compatible endpoint through the existing `px_openai_generate` adapter and registers one low-risk `get_time(zone)` tool. The model may only call `get_time`; every other tool call is denied by policy. |
 | [mcp](language/c/examples/mcp) | This example uses a caller-owned in-process transport with the C MCP client. It covers initialize, `tools/list`, and `tools/call` without a server process. |
 | [provider-fallback](language/c/examples/provider-fallback) | This example calls a fallback only after the primary fails and preserves the primary error when both fail. |
 | [retry](language/c/examples/retry) | This example retries a transient failure with a bounded attempt count and preserves the final error when attempts are exhausted. |
@@ -78,9 +78,9 @@ Scenario-oriented tutorials live under `language/c/Tutorial`. Planning context: 
 
 | Path | What it shows |
 | --- | --- |
-| [Tutorial](language/c/Tutorial) | Bounded C examples built on the native Core. Each tutorial is a small, runnable slice with explicit non-goals and an application-owned boundary; none is a complete industry prod... |
+| [Tutorial](language/c/Tutorial) | Bounded C examples built on the native Core. Each tutorial is a small, runnable slice with explicit non-goals and an application-owned boundary; none is a complete industry product. |
 | [aquaculture-water](language/c/Tutorial/aquaculture-water) | Computes fixed oxygen/temperature indicators and drafts a bounded review action. No aerator or feeder command. |
-| [device-diagnostics](language/c/Tutorial/device-diagnostics) | A scoped device tutorial over the native MIT C Core. It reads one fixed `device-100` diagnostic snapshot through an application-owned `PxDeviceAdapter` function pointer and draf... |
+| [device-diagnostics](language/c/Tutorial/device-diagnostics) | A scoped device tutorial over the native MIT C Core. It reads one fixed `device-100` diagnostic snapshot through an application-owned `PxDeviceAdapter` function pointer and drafts an operator review action. The adapter is an in-process fixture. This tutorial does not implement a real serial bus, socket, device SDK, live model or device write. |
 | [hvac-settings](language/c/Tutorial/hvac-settings) | Reads fixed building conditions and drafts review-only HVAC/lighting settings. No BMS command or verified energy savings. |
 | [lab-loop](language/c/Tutorial/lab-loop) | Simulates one fixed parameter/result cycle and drafts review-only next parameters. No actuator, chemical handling or autonomous experiment. |
 | [livestock-monitor](language/c/Tutorial/livestock-monitor) | Summarizes fixed animal observations and drafts a review-only veterinary request. No diagnosis, isolation or feeding control. |
@@ -103,6 +103,11 @@ ctest --test-dir build --output-on-failure
 ```
 
 This mirror contains the language source and the shared `spec/` vectors, so the implementation can be built and tested here. See [`language/c/README.md`](language/c/README.md) for the exact commands. The monorepo CI runs conformance, API snapshot, and native tests for this implementation.
+
+## Boundaries
+
+Reference application source is not end-to-end portfolio acceptance; follow each README's scope and evidence.
+PRAXO-CORE is not a hosted model, workflow engine, identity provider, or safety controller. Do not infer exactly-once execution, complete sandbox isolation, production security certification, live-provider behavior, or physical safety from this package.
 
 ## Community
 
@@ -133,6 +138,5 @@ This mirror contains the language source and the shared `spec/` vectors, so the 
 
 This repository is a discovery mirror of the canonical C source. The monorepo remains the source of truth and the release workflow source. The mirror's `main` branch tracks current source, not a release snapshot. Source tags refer to the canonical monorepo and are not necessarily present in this mirror; syncing the branch does not publish mirror tags or registry packages.
 
-PRAXO-CORE is not a hosted model, workflow engine, identity provider, or safety controller. Do not infer exactly-once execution, complete sandbox isolation, production security certification, live-provider behavior, or physical safety from this package.
 
 MIT licensed.
